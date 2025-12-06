@@ -32,9 +32,7 @@ export default function Hero() {
           <Link
             href="/menu"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg 
-              transition-transform duration-300 ease-in-out 
-              hover:-translate-y-1 hover:shadow-lg hover:bg-blue-700"
+            className="bg-blue-600 text-white px-6 py-3 rounded-lg transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg hover:bg-blue-700"
           >
             View Our Menu
           </Link>

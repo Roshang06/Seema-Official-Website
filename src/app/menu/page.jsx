@@ -65,6 +65,9 @@ const MENU = [
   {
     section: "Chat",
     items: [
+  { name: "Bun Maska", description: "Soft bread slathered with Maska butter.", img: "/bun_maska.jpg" , price: "$5" },
+  { name: "Dahi Sev Puri Chaat", description: "Small, crispy fried puris filled with spiced potatoes, chickpeas, onions, tangy chutneys (tamarind, mint), and cool yogurt.", img: "/Dahi_sev_puri_chaat.jpg" , price: "$5" },
+  { name: "Suralichi Vadi", description: "Gram flour (besan) and yogurt (or buttermilk), seasoned with ingredients like turmeric, ginger, and green chili paste.", img: "/Suralichi_Vadi.jpg" , price: "$5" },
   { name: "Samosa", description: "Crispy pastry filled with spiced potatoes.", img: "/placeholder_food_image.jpg" , price: "$5"},
   { name: "Vada pav", description: "Mumbai's spicy potato fritter tucked in a soft bun.", img: "/vada_pav.jpg" , price: "$5" },
   { name: "Veg puff", description: "Flaky puff pastry with a savory vegetable filling.", img: "/placeholder_food_image.jpg" , price: "$5" },
