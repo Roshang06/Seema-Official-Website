@@ -13,7 +13,7 @@ export default function Navbar() {
           <img
             src="/favicon.ico"
             alt="Seema Tasty Delights logo"
-            className="w-12 h-12 object-contain"
+            className="w-10 h-10 sm:w-12 h-12 object-contain"
             loading="lazy"
           />
           <Link href="/" className="flex flex-col leading-none">
@@ -23,7 +23,7 @@ export default function Navbar() {
             >
               Seema
             </span>
-            <span className="text-sm font-semibold text-gray-600 -mt-1">
+            <span className="text-[10px] sm:text-sm font-semibold text-gray-600 -mt-1">
               Tasty Delights
             </span>
           </Link>
@@ -49,7 +49,7 @@ export default function Navbar() {
         </ul>
         
         <div className="justify-center sm:justify-end">
-          <a className="px-3 sm:px-6 py-2 rounded-lg text-white bg-blue-600 transition duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg"
+          <a className="px-3 sm:px-6 py-2 whitespace-normal rounded-lg text-white bg-blue-600 transition duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg"
               href="https://www.google.com" target="_blank"> {/* Placeholder link */}
             Order Online
           </a>
