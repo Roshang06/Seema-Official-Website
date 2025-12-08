@@ -49,7 +49,7 @@ export default function Navbar() {
         </ul>
         
         <div className="justify-center sm:justify-end">
-          <a className="px-6 py-2 rounded-lg text-white bg-blue-600 transition duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg"
+          <a className="px-3 sm:px-6 py-2 rounded-lg text-white bg-blue-600 transition duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg"
               href="https://www.google.com" target="_blank"> {/* Placeholder link */}
             Order Online
           </a>
