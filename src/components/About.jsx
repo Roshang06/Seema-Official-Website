@@ -13,13 +13,13 @@ export default function About() {
 
         <div className="justify-center sm:justify-end">
           <a className="px-3 sm:px-6 py-2 rounded-lg text-white bg-blue-600 transition duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg"
-              href="https://www.google.com" target="_blank"> {/* Placeholder link */}
+              href="https://seemas-cafe-sammamish.cloveronline.com/" target="_blank"> {/* Placeholder link */}
             Order Online
           </a>
         </div>
       
       <p className="mt-4 max-w-2xl mx-auto text-gray-600 mt-4">
-        In addition to store, we offer catering to your events. <span className="text-blue-700" ><Link href="/contact" >Contact Us</Link></span> to learn more.
+        In addition to our store, we offer catering to your events. <span className="text-blue-700" ><Link href="/contact" >Contact Us</Link></span> to learn more.
       </p>
     </section>
   );

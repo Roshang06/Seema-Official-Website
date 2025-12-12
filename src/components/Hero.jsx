@@ -25,7 +25,7 @@ export default function Hero() {
           Welcome to <span className="text-pink-400">Seema Tasty Delights</span>
         </h1>
         <p className="text-lg mb-6">
-          Your neighborhood destination for premium coffee, delectable sweets,
+          Your neighborhood destination for Indian coffee, delectable sweets,
           and handcrafted jewelry on Sammamish Lake Road.
         </p>
         <div className="flex justify-center space-x-4">
