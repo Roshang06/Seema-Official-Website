@@ -13,7 +13,7 @@ export default function About() {
 
         <div className="justify-center sm:justify-end">
           <a className="px-3 sm:px-6 py-2 rounded-lg text-white bg-blue-600 transition duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg"
-              href="https://seemas-cafe-sammamish.cloveronline.com/" target="_blank"> {/* Placeholder link */}
+              href="https://seemas-cafe-sammamish.cloveronline.com/categories/all" target="_blank"> {/* Placeholder link */}
             Order Online
           </a>
         </div>
