@@ -2,22 +2,37 @@
 
 const MENU = [
   {
-    section: "Coffee",
+    section: "Hot Beverages",
     items: [
+      { name: "Filter Coffee", description: "A rich, full-bodied Indian blend — perfectly roasted and brewed to bring out smoky, chocolatey notes.", img: "/placeholder_food_image.jpg", price: "$5"},
       {
-        name: "Blend of Indian coffee",
-        description:
-          "A rich, full-bodied Indian blend — perfectly roasted and brewed to bring out smoky, chocolatey notes.",
-  img: "/placeholder_food_image.jpg", 
-        price: "$5"
-      },
-      {
-        name: "Tea filter coffee",
+        name: "Tea",
         description:
           "Traditional filter coffee prepared with care — velvety, fragrant, and comforting in every cup.",
+  img: "/Tea.jpeg",
+         price: "$5"
+      },
+      {
+        name: "Nescafe",
+        description:
+          "A type of instant coffee made from roasted coffee beans.",
   img: "/placeholder_food_image.jpg",
          price: "$5"
       },
+      { name: "Milk", description: "Plain milk served hot or cold, with or without sugar.", img: "/placeholder_food_image.jpg", price: "$5"},
+    ],
+  },
+  {
+    section: "Chat",
+    items: [
+  { name: "Bun Maska", description: "Soft bread slathered with Maska butter.", img: "/Bun_Maska1.jpeg" , price: "$5" },
+  { name: "Dahi Sev Puri Chaat", description: "Small, crispy fried puris filled with spiced potatoes, chickpeas, onions, tangy chutneys (tamarind, mint), and cool yogurt.", img: "/Dahi_sev_puri_chaat.jpg" , price: "$5" },
+  { name: "Suralichi Vadi", description: "Gram flour (besan) and yogurt (or buttermilk), seasoned with ingredients like turmeric, ginger, and green chili paste.", img: "/Suralichi_Vadi.jpg" , price: "$5" },
+  { name: "Samosa", description: "Crispy pastry filled with spiced potatoes.", img: "/Samosa.jpeg" , price: "$5"},
+  { name: "Vada pav", description: "Mumbai's spicy potato fritter tucked in a soft bun.", img: "/Vada_Pav.jpeg" , price: "$5" },
+  { name: "Cilantro Fritters", description: "A savory fried food item consisting of fresh cilantro (coriander leaves) mixed into a batter, often with other ingredients like chickpea flour and spices.", img: "/Cilantro_Fritters.jpeg" , price: "$5" },
+  { name: "Paneer Thecha Puff", description: "Paneer and tangy thecha in a buttery puff.", img: "/Paneer_thecha_puff.jpg" , price: "$5" },
+  { name: "Sabudana Vada", description: "A traditional, deep-fried snack from the state of Maharashtra, India.", img: "/Sabudana_Vada.jpeg" , price: "$5" },
     ],
   },
   {
@@ -37,13 +52,7 @@ const MENU = [
   { name: "Blueberry Smoothie", description: "Antioxidant-rich blueberries with a smooth finish.", img: "/placeholder_food_image.jpg" , price: "$5" },
     ],
   },
-  {
-    section: "Add ons",
-    items: [
-  { name: "whey protien", description: "A scoop of whey protein to boost your smoothie.", img: "/placeholder_food_image.jpg" , price: "$5" },
-  { name: "peanut butter", description: "Creamy peanut butter for extra flavor and protein.", img: "/placeholder_food_image.jpg" , price: "$5" },
-    ],
-  },
+  
   {
     section: "Acai Bowls",
     items: [
@@ -54,6 +63,14 @@ const MENU = [
     ],
   },
   {
+    section: "Add ons",
+    items: [
+  { name: "whey protien", description: "A scoop of whey protein to boost your smoothie.", img: "/placeholder_food_image.jpg" , price: "$5" },
+  { name: "peanut butter", description: "Creamy peanut butter for extra flavor and protein.", img: "/placeholder_food_image.jpg" , price: "$5" },
+    ],
+  },
+
+  {
     section: "Dessert",
     items: [
   { name: "Malai kulfi", description: "Creamy traditional kulfi with cardamom.", img: "/placeholder_food_image.jpg" , price: "$5" },
@@ -62,18 +79,7 @@ const MENU = [
   { name: "oreo kulfi", description: "Crunchy Oreo swirls in classic kulfi.", img: "/placeholder_food_image.jpg" , price: "$5" },
     ],
   },
-  {
-    section: "Chat",
-    items: [
-  { name: "Bun Maska", description: "Soft bread slathered with Maska butter.", img: "/bun_maska.jpg" , price: "$5" },
-  { name: "Dahi Sev Puri Chaat", description: "Small, crispy fried puris filled with spiced potatoes, chickpeas, onions, tangy chutneys (tamarind, mint), and cool yogurt.", img: "/Dahi_sev_puri_chaat.jpg" , price: "$5" },
-  { name: "Suralichi Vadi", description: "Gram flour (besan) and yogurt (or buttermilk), seasoned with ingredients like turmeric, ginger, and green chili paste.", img: "/Suralichi_Vadi.jpg" , price: "$5" },
-  { name: "Samosa", description: "Crispy pastry filled with spiced potatoes.", img: "/placeholder_food_image.jpg" , price: "$5"},
-  { name: "Vada pav", description: "Mumbai's spicy potato fritter tucked in a soft bun.", img: "/vada_pav.jpg" , price: "$5" },
-  { name: "Veg puff", description: "Flaky puff pastry with a savory vegetable filling.", img: "/placeholder_food_image.jpg" , price: "$5" },
-  { name: "paneer thecha puff", description: "Paneer and tangy thecha in a buttery puff.", img: "/Paneer_thecha_puff.jpg" , price: "$5" },
-    ],
-  },
+  
 ];
 
 function MenuItem({ name, price,  description, img }) {
