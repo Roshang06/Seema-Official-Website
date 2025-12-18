@@ -3,7 +3,7 @@ const features = [
     title: "Indian Coffee",
     desc: "Start your day with our expertly crafted coffee blends.",
     link: "Explore Coffee Menu →",
-    img: "/better_coffee.jpg"
+    img: "/better_coffee.jpeg"
   },
   {
     title: "Artisanal Sweets",
@@ -12,10 +12,10 @@ const features = [
     img: "/better_sweets.jpg"
   },
   {
-    title: "Handcrafted Jewelry",
-    desc: "Discover unique jewelry pieces that tell a story.",
+    title: "Delicious Chaat",
+    desc: "Indulge in tasty snacks and Indian chaat items.",
     link: "Explore Collection →",
-    img: "/better_jewels.jpg"
+    img: "/placeholder_food_image.jpg"
   }
 ];
 
@@ -24,7 +24,7 @@ export default function Features() {
     <section className="py-16 bg-gradient-to-r from-gray-500 to-white text-center">
       <h2 className="text-3xl font-bold mb-6">Three Delightful Experiences</h2>
       <p className="max-w-2xl mx-auto text-gray-600 mb-12">
-        Discover our carefully curated selection of Indian coffee, artisanal sweets, and handcrafted jewelry.
+        Discover our carefully curated selection of Indian coffee, artisanal sweets, and delicious chaat items.
       </p>
 
       <div className="grid md:grid-cols-3 gap-8 px-6 md:px-16">
@@ -42,3 +42,10 @@ export default function Features() {
     </section>
   );
 }
+
+{/*{
+    title: "Handcrafted Jewelry",
+    desc: "Discover unique jewelry pieces that tell a story.",
+    link: "Explore Collection →",
+    img: "/better_jewels.jpg"
+  }*/}

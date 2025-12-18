@@ -4,7 +4,7 @@ const MENU = [
   {
     section: "Hot Beverages",
     items: [
-      { name: "Filter Coffee", description: "A rich, full-bodied Indian blend — perfectly roasted and brewed to bring out smoky, chocolatey notes.", img: "/placeholder_food_image.jpg", price: "$5"},
+      { name: "Filter Coffee", description: "A rich, full-bodied Indian blend — perfectly roasted and brewed to bring out smoky, chocolatey notes.", img: "/filter_coffee.jpeg", price: "$5"},
       {
         name: "Tea",
         description:
@@ -16,10 +16,10 @@ const MENU = [
         name: "Nescafe",
         description:
           "A type of instant coffee made from roasted coffee beans.",
-  img: "/placeholder_food_image.jpg",
+  img: "/nescafe.jpg",
          price: "$5"
       },
-      { name: "Milk", description: "Plain milk served hot or cold, with or without sugar.", img: "/placeholder_food_image.jpg", price: "$5"},
+      { name: "Milk", description: "Plain milk served hot or cold, with or without sugar.", img: "/milk.jpg", price: "$5"},
     ],
   },
   {
@@ -38,21 +38,33 @@ const MENU = [
   {
     section: "Drinks",
     items: [
-  { name: "Mango lassi", description: "Creamy mango yogurt drink — sweet and tangy.", img: "/placeholder_food_image.jpg" , price: "$5"},
-  { name: "Mango shake", description: "Fresh mango blended with milk and love.", img: "/placeholder_food_image.jpg" , price: "$5" },
-  { name: "Chikoo shake", description: "Silky chikoo (sapota) shake with a touch of cardamom.", img: "/placeholder_food_image.jpg" , price: "$5" },
-  { name: "Strawberry shake", description: "Bright, fruity, and refreshing.", img: "/placeholder_food_image.jpg"  , price: "$5"},
+  { name: "Mango lassi", description: "Creamy mango yogurt drink — sweet and tangy.", img: "/lassi.jpg" , price: "$5"},
+  { name: "Mango shake", description: "Fresh mango blended with milk and love.", img: "/mango_shake.jpg" , price: "$5" },
+  { name: "Chikoo shake", description: "Silky chikoo (sapota) shake with a touch of cardamom.", img: "/chikoo.jpg" , price: "$5" },
+  { name: "Strawberry shake", description: "Bright, fruity, and refreshing.", img: "/strawberry.jpg"  , price: "$5"},
     ],
   },
   {
     section: "Smoothies",
     items: [
-  { name: "Strawberry Smoothie", description: "Fresh strawberries, yogurt, and honey.", img: "/placeholder_food_image.jpg" , price: "$5" },
-  { name: "Bannana Smoothie", description: "Banana, oats, and a creamy base for energy.", img: "/placeholder_food_image.jpg" , price: "$5" },
-  { name: "Blueberry Smoothie", description: "Antioxidant-rich blueberries with a smooth finish.", img: "/placeholder_food_image.jpg" , price: "$5" },
+  { name: "Strawberry Smoothie", description: "Fresh strawberries, yogurt, and honey.", img: "/strawberry_smoothie.jpg" , price: "$5" },
+  { name: "Bannana Smoothie", description: "Banana, oats, and a creamy base for energy.", img: "/banana.jpg" , price: "$5" },
+  { name: "Blueberry Smoothie", description: "Antioxidant-rich blueberries with a smooth finish.", img: "/blueberry.jpg" , price: "$5" },
     ],
   },
   
+  
+
+  {
+    section: "Dessert",
+    items: [
+  { name: "Malai kulfi", description: "Creamy traditional kulfi with cardamom.", img: "/malaikulfi.jpg" , price: "$5" },
+  { name: "Mango kulfi", description: "Seasonal mango folded into chilled kulfi.", img: "/mangokulfi.jpg"  , price: "$5"},
+  { name: "Chochoate kulfi", description: "Decadent chocolate kulfi for chocolate lovers.", img: "/chocolate.jpg" , price: "$5" },
+  { name: "oreo kulfi", description: "Crunchy Oreo swirls in classic kulfi.", img: "/oreo.jpg" , price: "$5" },
+    ],
+  },
+
   {
     section: "Acai Bowls",
     items: [
@@ -67,16 +79,6 @@ const MENU = [
     items: [
   { name: "whey protien", description: "A scoop of whey protein to boost your smoothie.", img: "/placeholder_food_image.jpg" , price: "$5" },
   { name: "peanut butter", description: "Creamy peanut butter for extra flavor and protein.", img: "/placeholder_food_image.jpg" , price: "$5" },
-    ],
-  },
-
-  {
-    section: "Dessert",
-    items: [
-  { name: "Malai kulfi", description: "Creamy traditional kulfi with cardamom.", img: "/placeholder_food_image.jpg" , price: "$5" },
-  { name: "Mango kulfi", description: "Seasonal mango folded into chilled kulfi.", img: "/placeholder_food_image.jpg"  , price: "$5"},
-  { name: "Chochoate kulfi", description: "Decadent chocolate kulfi for chocolate lovers.", img: "/placeholder_food_image.jpg" , price: "$5" },
-  { name: "oreo kulfi", description: "Crunchy Oreo swirls in classic kulfi.", img: "/placeholder_food_image.jpg" , price: "$5" },
     ],
   },
   
