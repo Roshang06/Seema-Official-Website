@@ -60,7 +60,7 @@ const MENU = [
     items: [
   { name: "Malai kulfi", description: "Creamy traditional kulfi with cardamom.", img: "/malaikulfi.jpg" , price: "$5" },
   { name: "Mango kulfi", description: "Seasonal mango folded into chilled kulfi.", img: "/mangokulfi.jpg"  , price: "$5"},
-  { name: "Chochoate kulfi", description: "Decadent chocolate kulfi for chocolate lovers.", img: "/chocolate.jpg" , price: "$5" },
+  { name: "Chocolate kulfi", description: "Decadent chocolate kulfi for chocolate lovers.", img: "/chocolate.jpg" , price: "$5" },
   { name: "oreo kulfi", description: "Crunchy Oreo swirls in classic kulfi.", img: "/oreo.jpg" , price: "$5" },
     ],
   },
