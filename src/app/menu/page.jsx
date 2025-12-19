@@ -60,25 +60,25 @@ const MENU = [
     items: [
   { name: "Malai kulfi", description: "Creamy traditional kulfi with cardamom.", img: "/malaikulfi.jpg" , price: "$5" },
   { name: "Mango kulfi", description: "Seasonal mango folded into chilled kulfi.", img: "/mangokulfi.jpg"  , price: "$5"},
-  { name: "Chochoate kulfi", description: "Decadent chocolate kulfi for chocolate lovers.", img: "/chocolate.jpg" , price: "$5" },
-  { name: "oreo kulfi", description: "Crunchy Oreo swirls in classic kulfi.", img: "/oreo.jpg" , price: "$5" },
+  { name: "Chocolate kulfi", description: "Decadent chocolate kulfi for chocolate lovers.", img: "/chocolate.jpg" , price: "$5" },
+  { name: "Oreo kulfi", description: "Crunchy Oreo swirls in classic kulfi.", img: "/oreo.jpg" , price: "$5" },
     ],
   },
 
   {
     section: "Acai Bowls",
     items: [
-  { name: "Bannana Berry Crunch", description: "Acai base topped with banana, granola and berries.", img: "/placeholder_food_image.jpg" , price: "$5" },
-  { name: "Health Nut", description: "Nutty granola, seeds, and almond butter.", img: "/placeholder_food_image.jpg" , price: "$5" },
-  { name: "Tropical Sunrise", description: "Pineapple, mango and a bright citrus finish.", img: "/placeholder_food_image.jpg" , price: "$5" },
-  { name: "Vegan Berry Blast", description: "All plant-based, berry-forward and refreshing.", img: "/placeholder_food_image.jpg" , price: "$5" },
+  { name: "Bannana Berry Crunch", description: "Acai base topped with banana, granola and berries.", img: "/BananaCrunchAcaiBowl.webp" , price: "$5" },
+  { name: "Health Nut", description: "Nutty granola, seeds, and almond butter.", img: "/HealthNut.jpeg" , price: "$5" },
+  { name: "Tropical Sunrise", description: "Pineapple, mango and a bright citrus finish.", img: "/Tropical_Sunrise.jpeg" , price: "$5" },
+  { name: "Vegan Berry Blast", description: "All plant-based, berry-forward and refreshing.", img: "/VeganBerryBlast.jpg" , price: "$5" },
     ],
   },
   {
     section: "Add ons",
     items: [
-  { name: "whey protien", description: "A scoop of whey protein to boost your smoothie.", img: "/placeholder_food_image.jpg" , price: "$5" },
-  { name: "peanut butter", description: "Creamy peanut butter for extra flavor and protein.", img: "/placeholder_food_image.jpg" , price: "$5" },
+  { name: "Whey protien", description: "A scoop of whey protein to boost your smoothie.", img: "/whey.jpg" , price: "$5" },
+  { name: "Peanut butter", description: "Creamy peanut butter for extra flavor and protein.", img: "/peanutbutter.jpg" , price: "$5" },
     ],
   },
   
