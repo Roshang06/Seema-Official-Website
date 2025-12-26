@@ -37,7 +37,7 @@ export default function Hero() {
             View Our Menu
           </Link>
 
-          <Link className="border border-white px-6 py-3 rounded-lg hover:bg-white hover:text-black" href="/find-us" >
+          <Link className="border border-white px-6 py-3 rounded-lg hover:bg-white hover:text-black" href="/findus" >
             Find Us
           </Link>
 
