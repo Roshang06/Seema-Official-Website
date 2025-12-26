@@ -37,7 +37,7 @@ export default function Footer() {
 
             <div className="mt-4 flex items-center space-x-4">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/seematastydelights/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -87,7 +87,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/find-us" className="hover:text-white transition-colors">
+                <Link href="/findus" className="hover:text-white transition-colors">
                   Find Us
                 </Link>
               </li>
@@ -106,10 +106,10 @@ export default function Footer() {
             <address className="not-italic mt-3 text-pink-50 space-y-2 text-sm">
               <li>3310 E Lake Sammamish Pkwy SE Suite F, Sammamish, WA 98075</li>
               <li>
-                Phone: <a className="hover:text-white" href="tel:+1234567890">+1 (111) 111-1111</a>
+                Phone: <a className="hover:text-white" href="tel:+425-615-4802">+1 (425) 615-4802</a>
               </li>
               <li>
-                Email: <a className="hover:text-white" href="mailto:info@seema-delights.com">info@Example_Email.com</a>
+                Email: <a className="hover:text-white" href="mailto:seemadelights@outlook.com">seemadelights@outlook.com</a>
               </li>
             </address>
             </ul>
