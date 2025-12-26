@@ -1,20 +1,22 @@
+import Link from 'next/link';
+
 const features = [
   {
     title: "Indian Coffee",
     desc: "Start your day with our expertly crafted coffee blends.",
-    link: "Explore Coffee Menu →",
+    name: "Explore Coffee Menu →",
     img: "/better_coffee.jpeg"
   },
   {
     title: "Artisanal Sweets",
     desc: "Indulge in freshly baked pastries and desserts.",
-    link: "View Sweet Treats →",
+    name: "View Sweet Treats →",
     img: "/better_sweets.jpg"
   },
   {
     title: "Delicious Chaat",
     desc: "Indulge in tasty snacks and Indian chaat items.",
-    link: "Explore Collection →",
+    name: "Explore Collection →",
     img: "/placeholder_food_image.jpg"
   }
 ];
@@ -35,7 +37,7 @@ export default function Features() {
             <img src={f.img} alt={f.title} className="w-full h-40 object-cover rounded-lg mb-4"/>
             <h3 className="text-xl font-semibold mb-2">{f.title}</h3>
             <p className="text-gray-600 mb-4">{f.desc}</p>
-            <a href="#" className="text-blue-600 font-medium hover:underline">{f.link}</a>
+            <Link href="/menu" className="text-blue-600 font-medium hover:underline">{f.name}</Link>
           </div>
         ))}
       </div>
@@ -43,9 +45,4 @@ export default function Features() {
   );
 }
 
-{/*{
-    title: "Handcrafted Jewelry",
-    desc: "Discover unique jewelry pieces that tell a story.",
-    link: "Explore Collection →",
-    img: "/better_jewels.jpg"
-  }*/}
+
