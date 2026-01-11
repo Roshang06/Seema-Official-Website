@@ -36,11 +36,6 @@ export default function FindUs() {
               for 8 minutes; you'll see the restaurant on the right.
             </li>
           </ol>
-
-          <p className="mt-4 text-sm text-gray-500">
-            Note: these are placeholder directions. We can swap in exact
-            directions later.
-          </p>
         </div>
 
         {/* Right: map and link */}
