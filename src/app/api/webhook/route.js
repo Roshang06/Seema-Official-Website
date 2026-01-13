@@ -3,16 +3,21 @@ export const runtime = "nodejs";
 import Stripe from "stripe";
 import { headers } from "next/headers";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-
 global.orders = global.orders || [];
 
 export async function POST(req) {
   let event;
 
   try {
+    // ✅ FIX #1: Await headers() - it's async in Next.js 16
+    const headersList = await headers();
+    const sig = headersList.get("stripe-signature");
+
+    // ✅ FIX #2: Get raw body and verify signature
     const body = await req.text();
-    const sig = headers().get("stripe-signature");
+
+    // ✅ Create Stripe instance inside handler to ensure env vars are loaded
+    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
     event = stripe.webhooks.constructEvent(
       body,
@@ -21,7 +26,9 @@ export async function POST(req) {
     );
   } catch (err) {
     console.error("Webhook signature verification failed.", err.message);
-    return new Response("Bad signature", { status: 400 });
+    console.error("Signature header:", headersList?.get("stripe-signature"));
+    console.error("Webhook secret configured:", !!process.env.STRIPE_WEBHOOK_SECRET);
+    return new Response(`Webhook Error: ${err.message}`, { status: 400 });
   }
 
   if (event.type === "checkout.session.completed") {
