@@ -2,6 +2,7 @@ import "@/globals.css";
 import { Dancing_Script } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import { CartProvider } from "./context/CartContext";
+import { AdminProvider } from "./context/AdminContext";
 
 /*const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,10 +31,12 @@ export default function RootLayout({ children }) {
       <body
         className={`${dancingScript.variable} antialiased`}
       >
-        <CartProvider>
-          <Navbar />
-          {children}
-        </CartProvider>
+        <AdminProvider>
+          <CartProvider>
+            <Navbar />
+            {children}
+          </CartProvider>
+        </AdminProvider>
       </body>
     </html>
   );

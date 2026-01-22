@@ -11,7 +11,7 @@
   "dependencies": {
     "@sanity/image-url": "^1.2.0",
     "@sanity/vision": "^4.22.0",
-    "framer-motion": "^12.27.1",
+    "framer-motion": "^12.28.1",
     "next": "16.0.7",
     "next-sanity": "^11.6.12",
     "nodemailer": "^7.0.12",
@@ -19,7 +19,7 @@
     "react-dom": "19.2.0",
     "sanity": "^4.22.0",
     "stripe": "^20.2.0",
-    "styled-components": "6",
+    "styled-components": "^6.3.8",
     "twilio": "^5.11.2"
   },
   "devDependencies": {
