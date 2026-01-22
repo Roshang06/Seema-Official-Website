@@ -67,7 +67,7 @@ export default function SuccessContent() {
               {orderId}
             </p>
             <p className="text-xs text-gray-500 mt-2">
-              Save this ID to track your order
+              Keep this ID for your records
             </p>
           </div>
 
@@ -82,24 +82,8 @@ export default function SuccessContent() {
           <div className="space-y-3 mb-6">
             <div className="flex items-start gap-3">
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-8 w-8 rounded-full bg-amber-400/20">
-                  <span className="text-amber-400 text-sm font-bold">1</span>
-                </div>
-              </div>
-              <div className="text-left">
-                <p className="text-sm font-semibold text-amber-300">
-                  Check your order status
-                </p>
-                <p className="text-xs text-gray-400 mt-1">
-                  Track your order using the ID above
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-3">
-              <div className="flex-shrink-0">
                 <div className="flex items-center justify-center h-8 w-8 rounded-full bg-pink-400/20">
-                  <span className="text-pink-400 text-sm font-bold">2</span>
+                  <span className="text-pink-400 text-sm font-bold">1</span>
                 </div>
               </div>
               <div className="text-left">
@@ -115,7 +99,7 @@ export default function SuccessContent() {
             <div className="flex items-start gap-3">
               <div className="flex-shrink-0">
                 <div className="flex items-center justify-center h-8 w-8 rounded-full bg-green-400/20">
-                  <span className="text-green-400 text-sm font-bold">3</span>
+                  <span className="text-green-400 text-sm font-bold">2</span>
                 </div>
               </div>
               <div className="text-left">
@@ -131,12 +115,6 @@ export default function SuccessContent() {
 
           {/* Buttons */}
           <div className="space-y-3">
-            <Link
-              href={`/track?orderId=${orderId}`}
-              className="block w-full px-4 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg hover:shadow-lg hover:shadow-green-500/50 text-center font-bold transition"
-            >
-              Track Order
-            </Link>
             <Link
               href="/"
               className="block w-full px-4 py-3 bg-gray-700 text-gray-100 rounded-lg hover:bg-gray-600 text-center font-semibold transition border border-gray-600"
