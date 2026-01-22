@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+# data files (local order storage)
+.data/
+
 # production
 /build
 

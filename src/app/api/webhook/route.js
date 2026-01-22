@@ -2,8 +2,7 @@ export const runtime = "nodejs";
 
 import Stripe from "stripe";
 import { headers } from "next/headers";
-
-global.orders = global.orders || [];
+import { addOrder } from "../../../lib/storage";
 
 export async function POST(req) {
   let event;
@@ -48,7 +47,8 @@ export async function POST(req) {
       createdAt: new Date().toISOString(),
     };
 
-    global.orders.push(order);
+    // Store order using file storage
+    await addOrder(order);
 
     // Send confirmation email
     try {

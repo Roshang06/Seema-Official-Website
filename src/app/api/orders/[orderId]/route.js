@@ -1,11 +1,11 @@
 import { NextResponse } from "next/server";
+import { getOrderById } from "../../../../lib/storage";
 
 export async function GET(req, { params }) {
   try {
     const { orderId } = params;
 
-    const orders = global.orders || [];
-    const order = orders.find((o) => o.id === orderId);
+    const order = await getOrderById(orderId);
 
     if (!order) {
       return NextResponse.json(

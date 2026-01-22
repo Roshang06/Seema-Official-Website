@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
+import { readOrders, updateOrder } from "../../../../lib/storage";
 
 export async function GET(req) {
   try {
-    const orders = global.orders || [];
+    const orders = await readOrders();
     return NextResponse.json({ orders });
   } catch (err) {
     console.error("Failed to fetch orders:", err);
@@ -24,8 +25,10 @@ export async function PATCH(req) {
       );
     }
 
-    const orders = global.orders || [];
-    const order = orders.find((o) => o.id === orderId);
+    const order = await updateOrder(orderId, {
+      status: status,
+      updatedAt: new Date().toISOString(),
+    });
 
     if (!order) {
       return NextResponse.json(
@@ -33,9 +36,6 @@ export async function PATCH(req) {
         { status: 404 }
       );
     }
-
-    order.status = status;
-    order.updatedAt = new Date().toISOString();
 
     // Send email if order is marked as completed
     if (status === "COMPLETED") {
