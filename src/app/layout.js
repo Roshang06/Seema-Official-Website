@@ -31,8 +31,8 @@ export default function RootLayout({ children }) {
         className={`${dancingScript.variable} antialiased`}
       >
         <CartProvider>
-        <Navbar />
-        {children}
+          <Navbar />
+          {children}
         </CartProvider>
       </body>
     </html>

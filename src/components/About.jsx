@@ -4,7 +4,7 @@ export default function About() {
   return (
     <section className="py-20 px-8 md:px-16 text-center bg-white">
       <h2 className="text-3xl font-bold mb-6">
-        More Than Just a Store, <span className="text-blue-600">It’s an Experience</span>
+        More Than Just a Store, <span className="text-blue-600">It's an Experience</span>
       </h2>
       <p className="max-w-2xl mx-auto text-gray-600 mb-5">
         Located on beautiful Sammamish Lake Road, Seema Tasty Delights offers a

@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-export default function Hero() {
+export default function Hero({ content }) {
   return (
     <section className="relative h-[80vh] flex items-center justify-center text-white">
       {/* Use an <img> so browsers can pick the right resolution (srcSet) and object-fit keeps aspect ratio */}
@@ -25,8 +25,7 @@ export default function Hero() {
           Welcome to <span className="text-pink-400">Seema Tasty Delights</span>
         </h1>
         <p className="text-lg mb-6">
-          Your neighborhood destination for Indian coffee, delectable sweets,
-          and handcrafted jewelry on Sammamish Lake Road.
+          {content.herotext}
         </p>
         <div className="flex justify-center space-x-4">
           <Link
