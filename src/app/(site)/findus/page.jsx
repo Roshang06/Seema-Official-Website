@@ -1,10 +1,13 @@
-export default function FindUs() {
+import { client } from "@/sanity/lib/client";
+
+export default async function FindUs() {
   const address =
     "3310 E Lake Sammamish Pkwy SE Suite F, Sammamish, WA 98075";
   const embedSrc =
     "https://www.google.com/maps?q=3310+E+Lake+Sammamish+Pkwy+SE+Suite+F,+Sammamish,+WA+98075&output=embed";
   const mapsLink =
     "https://www.google.com/maps/search/?api=1&query=Seema+Tasty+Delights,+3310+E+Lake+Sammamish+Pkwy+SE+Suite+F,+Sammamish,+WA+98075";
+  const content = await client.fetch('*[_type == "findus"][0]{findustext}');
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-pink-50 via-white to-blue-50 pb-20 flex items-center">
@@ -19,22 +22,11 @@ export default function FindUs() {
           <p className="text-sm text-gray-600 mb-4">{address}</p>
 
           <ol className="list-decimal list-inside text-gray-700 space-y-2">
-            <li>
-              From I-90: take Exit 20 toward Sammamish. Head north on 228th
-              Ave SE/Lake Sammamish Pkwy.
-            </li>
-            <li>
-              Continue on Lake Sammamish Pkwy SE for about 3 miles, then turn
-              right into the shopping center where Suite F is located.
-            </li>
-            <li>
-              Parking is available in the lot—there is accessible parking near
-              the main entrance.
-            </li>
-            <li>
-              Walking from the Sammamish Commons bus stop: head east on Main St
-              for 8 minutes; you'll see the restaurant on the right.
-            </li>
+            {content.findustext.map((listItem, i) => (
+              <li key={i}>
+                {listItem}
+              </li>
+            ))}
           </ol>
         </div>
 

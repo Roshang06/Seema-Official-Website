@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { urlFor } from '@/sanity/lib/image';
 
 const features = [
   {
@@ -21,23 +22,23 @@ const features = [
   }
 ];
 
-export default function Features() {
+export default function Features({ content, features_content }) {
   return (
     <section className="py-16 bg-gradient-to-r from-gray-500 to-white text-center">
-      <h2 className="text-3xl font-bold mb-6">Three Delightful Experiences</h2>
+      <h2 className="text-3xl font-bold mb-6">{content.features_title}</h2>
       <p className="max-w-2xl mx-auto text-gray-600 mb-12">
-        Discover our carefully curated selection of Indian coffee, artisanal sweets, and delicious chaat items.
+        {content.features_content}
       </p>
 
       <div className="grid md:grid-cols-3 gap-8 px-6 md:px-16">
-        {features.map((f, i) => (
+        {features_content.map((f, i) => (
           <div key={i} className="bg-white rounded-xl shadow p-6 
              transition-transform duration-300 ease-in-out
              hover:-translate-y-2 hover:shadow-2xl">
-            <img src={f.img} alt={f.title} className="w-full h-40 object-cover rounded-lg mb-4"/>
+            <img src={urlFor(f.image).url()} alt={f.title} className="w-full h-40 object-cover rounded-lg mb-4"/>
             <h3 className="text-xl font-semibold mb-2">{f.title}</h3>
-            <p className="text-gray-600 mb-4">{f.desc}</p>
-            <Link href="/menu" className="text-blue-600 font-medium hover:underline">{f.name}</Link>
+            <p className="text-gray-600 mb-4">{f.content}</p>
+            <Link href="/menu" className="text-blue-600 font-medium hover:underline">{f.linkedtext}</Link>
           </div>
         ))}
       </div>

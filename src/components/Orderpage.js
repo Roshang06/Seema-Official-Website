@@ -1,9 +1,9 @@
 "use client";
-import { useCart } from "../context/CartContext";
+import { useCart } from "@/app/(site)/context/CartContext";
 import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
-const MENU = [
+{/*const MENU = [
   // Hot Beverages
   {
     id: "filter-coffee",
@@ -293,9 +293,9 @@ const MENU = [
       amount: ["1 Tbsp", "2 Tbsp", "3 Tbsp"],
     },
   },
-];
+];*/}
 
-export default function OrderPage() {
+export default function OrderPage({menu}) {
   const { cart, addToCart, subtotal, removeFromCart } = useCart();
   const router = useRouter();
   const [selected, setSelected] = useState(null);
@@ -319,8 +319,8 @@ export default function OrderPage() {
 
   function handleAdd(item) {
     addToCart({
-      itemId: item.id,
-      name: item.name,
+      itemId: item._id,
+      itemname: item.itemname,
       basePrice: item.price,
       modifiers: mods,
       quantity: 1,
@@ -329,12 +329,28 @@ export default function OrderPage() {
     setMods({});
   }
 
+  function handleItemClick(item) {
+    // If item has no modifiers, add directly to cart
+    if (!item.modifiers || item.modifiers.length === 0) {
+      addToCart({
+        itemId: item._id,
+        itemname: item.itemname,
+        basePrice: item.price,
+        modifiers: {},
+        quantity: 1,
+      });
+    } else {
+      // Otherwise show modal for modifier selection
+      setSelected(item);
+    }
+  }
+
   function handleCheckout() {
     router.push("/checkout");
   }
 
   // Group menu items by section
-  const groupedMenu = MENU.reduce((acc, item) => {
+  const groupedMenu = menu.reduce((acc, item) => {
     const section = item.section;
     if (!acc[section]) {
       acc[section] = [];
@@ -375,18 +391,18 @@ export default function OrderPage() {
                 <div className="grid gap-3">
                   {items.map((item) => (
                     <div
-                      key={item.id}
+                      key={item._id}
                       className="bg-gradient-to-r from-gray-800 to-slate-800 border border-gray-700 p-4 rounded-lg hover:border-amber-400 hover:shadow-lg hover:shadow-amber-400/20 transition duration-300 flex justify-between items-center group cursor-pointer"
-                      onClick={() => setSelected(item)}
+                      onClick={() => handleItemClick(item)}
                     >
                       <div>
-                        <h3 className="font-semibold text-gray-100 group-hover:text-amber-300 transition">{item.name}</h3>
+                        <h3 className="font-semibold text-gray-100 group-hover:text-amber-300 transition">{item.itemname}</h3>
                         <p className="text-amber-300 font-bold text-lg">${item.price.toFixed(2)}</p>
                       </div>
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
-                          setSelected(item);
+                          handleItemClick(item);
                         }}
                         className="bg-gradient-to-r from-amber-400 to-pink-500 text-white px-6 py-2 rounded-lg hover:shadow-lg hover:shadow-amber-400/50 transition font-semibold"
                       >
@@ -417,12 +433,14 @@ export default function OrderPage() {
                     className="flex justify-between items-start p-3 bg-gray-900 rounded border border-gray-700 hover:border-amber-400 transition"
                   >
                     <div className="flex-1">
-                      <p className="font-medium text-amber-300">{item.name}</p>
-                      <p className="text-xs text-gray-400 mt-1">
-                        {Object.entries(item.modifiers)
-                          .map(([key, value]) => `${key}: ${value}`)
-                          .join(" • ")}
-                      </p>
+                      <p className="font-medium text-amber-300">{item.itemname}</p>
+                      {Object.keys(item.modifiers || {}).length > 0 && (
+                        <p className="text-xs text-gray-400 mt-1">
+                          {Object.entries(item.modifiers || {})
+                            .map(([key, value]) => `${key}: ${value}`)
+                            .join(" • ")}
+                        </p>
+                      )}
                       <p className="text-sm font-semibold text-pink-400 mt-1">
                         ${(item.basePrice * item.quantity).toFixed(2)}
                       </p>
@@ -463,34 +481,38 @@ export default function OrderPage() {
           >
             <div className="mb-6">
               <h3 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-pink-300 mb-2">
-                {selected.name}
+                {selected.itemname}
               </h3>
               <p className="text-amber-400 text-2xl font-bold">${selected.price.toFixed(2)}</p>
             </div>
 
             <div className="space-y-4 mb-6 max-h-96 overflow-y-auto">
-              {Object.entries(selected.modifiers).map(([key, values]) => (
-                <div key={key} className="pb-4 border-b border-gray-700 last:border-b-0">
-                  <p className="font-bold text-amber-300 capitalize mb-3">{key}</p>
-                  <div className="space-y-2">
-                    {values.map((v) => (
-                      <label
-                        key={v}
-                        className="flex items-center p-2 rounded hover:bg-gray-900 cursor-pointer transition"
-                      >
-                        <input
-                          type="radio"
-                          name={key}
-                          value={v}
-                          onChange={() => setMods({ ...mods, [key]: v })}
-                          className="mr-3 cursor-pointer"
-                        />
-                        <span className="text-gray-200">{v}</span>
-                      </label>
-                    ))}
+              {selected.modifiers && selected.modifiers.length > 0 ? (
+                selected.modifiers.map((modifier) => (
+                  <div key={modifier.name} className="pb-4 border-b border-gray-700 last:border-b-0">
+                    <p className="font-bold text-amber-300 capitalize mb-3">{modifier.name}</p>
+                    <div className="space-y-2">
+                      {modifier.options.map((v) => (
+                        <label
+                          key={v}
+                          className="flex items-center p-2 rounded hover:bg-gray-900 cursor-pointer transition"
+                        >
+                          <input
+                            type="radio"
+                            name={modifier.name}
+                            value={v}
+                            onChange={() => setMods({ ...mods, [modifier.name]: v })}
+                            className="mr-3 cursor-pointer"
+                          />
+                          <span className="text-gray-200">{v}</span>
+                        </label>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))
+              ) : (
+                <p className="text-gray-300">No modifiers available for this item.</p>
+              )}
             </div>
 
             <div className="flex gap-3">

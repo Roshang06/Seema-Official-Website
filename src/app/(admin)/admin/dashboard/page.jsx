@@ -1,7 +1,8 @@
 "use client";
-import { useAdmin } from "../../context/AdminContext";
+import { useAdmin } from "../../../(site)/context/AdminContext";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import AdminHeader from "@/components/AdminHeader";
 
 export default function AdminDashboard() {
   const { isAdmin, loading, logout } = useAdmin();
@@ -89,7 +90,10 @@ export default function AdminDashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <section>
+      <AdminHeader />
+
+    <div className="min-h-[calc(100vh_-_6rem)] bg-gray-100">
       {/* Header */}
       <div className="bg-blue-600 text-white p-6">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -253,5 +257,7 @@ export default function AdminDashboard() {
         </div>
       </div>
     </div>
+
+    </section>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 
-export default function Footer() {
+export default function Footer({ content, info }) {
   const year = new Date().getFullYear();
 
   return (
@@ -31,13 +31,12 @@ export default function Footer() {
             </div>
 
             <p className="mt-4 text-pink-100/90 max-w-md">
-              Handcrafted sweets and savory treats made with love. Visit our
-              shop for daily fresh desserts and specialty boxes.
+              {content.footertext}
             </p>
 
             <div className="mt-4 flex items-center space-x-4">
               <a
-                href="https://www.instagram.com/seematastydelights/"
+                href={info.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -104,12 +103,12 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-pink-400">Visit Us</h3>
             <ul className="mt-3 space-y-5 text-pink-50">
             <address className="not-italic mt-3 text-pink-50 space-y-2 text-sm">
-              <li>3310 E Lake Sammamish Pkwy SE Suite F, Sammamish, WA 98075</li>
+              <li>{info.address}</li>
               <li>
-                Phone: <a className="hover:text-white" href="tel:+425-615-4802">+1 (425) 615-4802</a>
+                Phone: <a className="hover:text-white" href="tel:+425-615-4802">{info.phone}</a>
               </li>
               <li>
-                Email: <a className="hover:text-white" href="mailto:seemadelights@outlook.com">seemadelights@outlook.com</a>
+                Email: <a className="hover:text-white" href="mailto:seemadelights@outlook.com">{info.email}</a>
               </li>
             </address>
             </ul>

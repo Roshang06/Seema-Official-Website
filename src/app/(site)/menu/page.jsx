@@ -1,6 +1,7 @@
-"use client";
+import { client } from "@/sanity/lib/client";
+import { urlFor } from '@/sanity/lib/image';
 
-const MENU = [
+{/*const MENU = [
   {
     section: "Hot Beverages",
     items: [
@@ -82,7 +83,7 @@ const MENU = [
     ],
   },
   
-];
+];*/}
 
 function MenuItem({ name, price,  description, img }) {
   return (
@@ -92,7 +93,7 @@ function MenuItem({ name, price,  description, img }) {
         <div className="order-1 md:order-1 w-full md:w-2/3">
           <div className="flex items-baseline justify-between md:block">
             <h4 className="text-xl md:text-2xl font-semibold bg-gradient-to-r from-amber-300 via-yellow-300 to-amber-200 bg-clip-text text-transparent">{name}</h4>
-            <div className="text-lg md:text-xl font-semibold text-amber-100 md:mt-2">{price}</div>
+            <div className="text-lg md:text-xl font-semibold text-amber-100 md:mt-2">${price}</div>
           </div>
         </div>
 
@@ -110,7 +111,16 @@ function MenuItem({ name, price,  description, img }) {
   );
 }
 
-export default function Menu() {
+export default async function Menu() {
+const items = await client.fetch('*[_type == "menuitem"]{section, itemname, price, description, mainImage}');
+let sections = [];
+items.forEach((item) => {
+  if (!sections.includes(item.section)) {
+    sections.push(item.section);
+  }
+});
+
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-800 text-gray-100 px-6 py-12">
       <div className="max-w-6xl mx-auto">
@@ -120,13 +130,13 @@ export default function Menu() {
         </header>
 
         <main className="space-y-10">
-          {MENU.map((section) => (
-            <section key={section.section} className="">
-              <h2 style={{ fontFamily: "'Dancing Script', cursive" }} className="text-2xl md:text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-amber-200 via-amber-300 to-yellow-200 mb-4">{section.section}</h2>
+          {sections.map((section, i) => (
+            <section key={i} className="">
+              <h2 style={{ fontFamily: "'Dancing Script', cursive" }} className="text-2xl md:text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-amber-200 via-amber-300 to-yellow-200 mb-4">{section}</h2>
 
               <div className="space-y-4">
-                {section.items.map((item) => (
-                  <MenuItem key={item.name} name={item.name} price={item.price} description={item.description} img={item.img} />
+                {items.filter(item => item.section === section).map((item) => (
+                  <MenuItem key={item.itemname} name={item.itemname} price={item.price} description={item.description} img={urlFor(item.mainImage).url()} />
                 ))}
               </div>
             </section>

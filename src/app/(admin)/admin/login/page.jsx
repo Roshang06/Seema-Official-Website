@@ -1,7 +1,8 @@
 "use client";
-import { useAdmin } from "../../context/AdminContext";
+import { useAdmin } from "../../../(site)/context/AdminContext";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import AdminHeader from "@/components/AdminHeader";
 
 export default function AdminLoginPage() {
   const { login } = useAdmin();
@@ -39,7 +40,10 @@ export default function AdminLoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <section className="">
+      <AdminHeader />
+    
+    <div className="min-h-[calc(100vh_-_6rem)] flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded shadow-lg w-96">
         <h1 className="text-2xl font-bold mb-6 text-center">Admin Login</h1>
 
@@ -74,5 +78,7 @@ export default function AdminLoginPage() {
         </form>
       </div>
     </div>
+    
+    </section>
   );
 }

@@ -1,6 +1,6 @@
 export default {
   name: 'menuitem',       // The internal ID (used in your code/queries)
-  title: 'Menu Item',      // The label your client sees in the Studio
+  title: 'Menu Items',      // The label your client sees in the Studio
   type: 'document',      // 'document' means it's a main piece of content
   fields: [
     {
@@ -9,9 +9,26 @@ export default {
       type: 'string',
     },
     {
+      name: 'section',
+      title: 'Section',
+      type: 'string',
+    },
+    {
+      name: 'price',
+      title: 'Price (USD)',
+      type: 'number',
+      validation: (Rule) => Rule.required().positive(),
+    },
+    {
       name: 'description',
       title: 'Description',
       type: 'text',
+    },
+    {
+      name: 'modifiers',
+      title: 'Modifiers',
+      type: 'array',
+      of: [{ type: 'modifier' }],
     },
     {
       name: 'mainImage',

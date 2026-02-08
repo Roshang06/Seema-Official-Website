@@ -1,9 +1,6 @@
-"use client";
 import Link from "next/link";
-import { useState } from "react";
 
 export default function AdminHeader() {
-  const [open, setOpen] = useState(false);
 
   return (
     <nav className="relative sticky top-0 z-50 bg-white shadow-sm px-8 py-6">

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function Contact() {
+export default function Contact({content}) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -38,7 +38,7 @@ export default function Contact() {
         </h1>
 
         <p className="text-center text-gray-600 mb-6">
-          We value your feedback and are open to suggestions.
+          {content}
         </p>
 
         <div className="bg-white rounded-xl shadow-lg p-6">

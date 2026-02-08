@@ -94,12 +94,14 @@ export default function CheckoutPage() {
                 <div key={i} className="pb-3 border-b last:border-b-0">
                   <div className="flex justify-between items-start">
                     <div className="flex-1">
-                      <p className="font-medium text-gray-900">{item.name}</p>
-                      <p className="text-xs text-gray-500 mt-1">
-                        {Object.entries(item.modifiers)
-                          .map(([key, value]) => `${key}: ${value}`)
-                          .join(" • ")}
-                      </p>
+                      <p className="font-medium text-gray-900">{item.itemname}</p>
+                      {Object.keys(item.modifiers || {}).length > 0 && (
+                        <p className="text-xs text-gray-500 mt-1">
+                          {Object.entries(item.modifiers || {})
+                            .map(([key, value]) => `${key}: ${value}`)
+                            .join(" • ")}
+                        </p>
+                      )}
                     </div>
                     <div className="text-right ml-4">
                       <p className="text-sm text-gray-600">x{item.quantity}</p>
