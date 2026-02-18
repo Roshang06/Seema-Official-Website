@@ -2,7 +2,7 @@ export const runtime = "nodejs";
 
 import Stripe from "stripe";
 import { headers } from "next/headers";
-import { addOrder } from "../../../lib/storage";
+import { webhookSupabase } from "../../../lib/webhook-supabase";
 
 export async function POST(req) {
   let event;
@@ -34,21 +34,28 @@ export async function POST(req) {
 
     const order = {
       id: session.metadata.orderId,
-      stripeSessionId: session.id,
+      stripe_session_id: session.id,
       status: "PENDING",
       items: items,
-      customerName: session.metadata.customerName,
-      customerEmail: session.metadata.customerEmail,
-      customerPhone: session.metadata.customerPhone,
+      customer_name: session.metadata.customerName,
+      customer_email: session.metadata.customerEmail,
+      customer_phone: session.metadata.customerPhone,
       subtotal: subtotal,
       tax: tax,
-      stripeFee: stripeFee,
+      stripe_fee: stripeFee,
       total: session.amount_total / 100,
-      createdAt: new Date().toISOString(),
+      created_at: new Date().toISOString(),
     };
 
-    // Store order using file storage
-    await addOrder(order);
+    // Store order in Supabase using anon key (webhook-verified transaction)
+    const { error } = await webhookSupabase
+      .from("orders")
+      .insert([order]);
+
+    if (error) {
+      console.error("Error storing order in Supabase:", error);
+      return new Response(`Failed to store order: ${error.message}`, { status: 500 });
+    }
 
     // Send confirmation email
     try {

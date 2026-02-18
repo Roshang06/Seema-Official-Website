@@ -194,7 +194,7 @@ export default function AdminDashboard() {
                           <div className="max-w-xs">
                             {order.items.map((item, i) => (
                               <div key={i} className="text-gray-700">
-                                {item.name}{" "}
+                                {item.itemname}{" "}
                                 <span className="text-xs text-gray-500">
                                   ({item.quantity})
                                 </span>

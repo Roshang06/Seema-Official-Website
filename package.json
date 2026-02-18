@@ -11,7 +11,8 @@
   "dependencies": {
     "@sanity/image-url": "^1.2.0",
     "@sanity/vision": "^4.22.0",
-    "framer-motion": "^12.33.0",
+    "@supabase/supabase-js": "^2.96.0",
+    "framer-motion": "^12.34.1",
     "next": "16.0.7",
     "next-sanity": "^11.6.12",
     "nodemailer": "^7.0.13",
@@ -21,7 +22,7 @@
     "sanity-plugin-singleton-management": "^1.0.6",
     "sanity-plugin-vercel-deploy": "^4.0.0",
     "stripe": "^20.3.1",
-    "styled-components": "^6.3.8",
+    "styled-components": "^6.3.9",
     "twilio": "^5.12.1"
   },
   "devDependencies": {
