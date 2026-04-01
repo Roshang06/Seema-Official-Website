@@ -5,7 +5,8 @@ import findus from "./findus";
 import feature from "./feature";
 import modifier from "./modifier";
 import sitesettings from "./sitesettings";
+import catering from "./catering";
 
 export const schema = {
-  types: [menuitem, homepage, contact, findus, feature, modifier, sitesettings],
+  types: [menuitem, homepage, contact, findus, feature, modifier, sitesettings, catering],
 };

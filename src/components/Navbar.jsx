@@ -37,6 +37,11 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
+            <Link href="/cateringmenu" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-blue-600 transition-colors">
+              Catering
+            </Link>
+          </li>
+          <li>
             <Link href="/findus" className="hover:text-blue-600 transition-colors">
               Find Us
             </Link>
