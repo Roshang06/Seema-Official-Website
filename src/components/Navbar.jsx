@@ -117,6 +117,13 @@ export default function Navbar() {
               Menu
             </Link>
             <Link
+              href="/menu"
+              onClick={() => setOpen(false)}
+              className="flex justify-end block px-4 py-2 text-gray-700 hover:bg-gray-50"
+            >
+              Catering
+            </Link>
+            <Link
               href="/findus"
               onClick={() => setOpen(false)}
               className="flex justify-end block px-4 py-2 text-gray-700 hover:bg-gray-50"

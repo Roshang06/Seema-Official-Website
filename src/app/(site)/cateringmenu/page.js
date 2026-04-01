@@ -15,7 +15,7 @@ export default async function CateringMenu() {
 
                     {cateringMenus.map((menu, index)=> (
                         <div key={index}>
-                            <img src={urlFor(menu.mainImage).url()} alt={menu.name} className="w-full h-auto"/>
+                            <img src={urlFor(menu.mainImage).url()} alt={menu.name} className="w-full h-auto py-4"/>
                         </div>
                     ))}
                 </div>
