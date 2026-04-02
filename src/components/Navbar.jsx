@@ -2,8 +2,9 @@
 import Link from "next/link";
 import { useState } from "react";
 
-export default function Navbar() {
+export default function Navbar({ cateringMenus = [] }) {
   const [open, setOpen] = useState(false);
+  const [cateringOpen, setCateringOpen] = useState(false);
 
   return (
     <nav className="relative sticky top-0 z-50 bg-white shadow-sm px-8 py-6">
@@ -36,10 +37,25 @@ export default function Navbar() {
               Menu
             </Link>
           </li>
-          <li>
+          <li className="relative group">
             <Link href="/cateringmenu" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-blue-600 transition-colors">
               Catering
             </Link>
+            {/* Desktop Dropdown */}
+            {cateringMenus.length > 0 && (
+              <div className="absolute left-0 hidden group-hover:block bg-white shadow-lg rounded-md py-2 min-w-max z-50 ring-1 ring-gray-200">
+                {cateringMenus.map((menu, index) => (
+                  <Link
+                    key={index}
+                    href={`/cateringmenu/${menu.slug}`}
+                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                    className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors whitespace-nowrap first:rounded-t-md last:rounded-b-md"
+                  >
+                    {menu.name}
+                  </Link>
+                ))}
+              </div>
+            )}
           </li>
           <li>
             <Link href="/findus" className="hover:text-blue-600 transition-colors">
@@ -116,13 +132,46 @@ export default function Navbar() {
             >
               Menu
             </Link>
-            <Link
-              href="/cateringmenu"
-              onClick={() => setOpen(false)}
-              className="flex justify-end block px-4 py-2 text-gray-700 hover:bg-gray-50"
-            >
-              Catering
-            </Link>
+            {/* Mobile Catering with Accordion */}
+            <div>
+              <button
+                onClick={() => setCateringOpen(!cateringOpen)}
+                className="w-full flex justify-between items-center px-4 py-2 text-gray-700 hover:bg-gray-50"
+              >
+                <span>Catering</span>
+                <svg
+                  className={`w-5 h-5 transition-transform ${cateringOpen ? "rotate-180" : ""}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                  />
+                </svg>
+              </button>
+              {/* Mobile Catering Submenu */}
+              {cateringOpen && cateringMenus.length > 0 && (
+                <div className="bg-gray-50">
+                  {cateringMenus.map((menu, index) => (
+                    <Link
+                      key={index}
+                      href={`/cateringmenu/${menu.slug}`}
+                      onClick={() => {
+                        setOpen(false);
+                        setCateringOpen(false);
+                      }}
+                      className="block px-8 py-2 text-gray-600 hover:bg-gray-100 hover:text-gray-800 transition-colors text-sm"
+                    >
+                      {menu.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
             <Link
               href="/findus"
               onClick={() => setOpen(false)}

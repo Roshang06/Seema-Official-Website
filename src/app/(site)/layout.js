@@ -3,6 +3,7 @@ import { Dancing_Script } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import { CartProvider } from "../(site)/context/CartContext";
 import { AdminProvider } from "../(site)/context/AdminContext";
+import { client } from "@/sanity/lib/client";
 
 /*const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +26,9 @@ export const metadata = {
   description: "Fresh coffee, smoothies, snacks, and more in Sammamish.",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const cateringMenus = await client.fetch('*[_type == "catering"]{name, "slug": slug.current}');
+
   return (
     <html lang="en">
       <body
@@ -33,7 +36,7 @@ export default function RootLayout({ children }) {
       >
         <AdminProvider>
           <CartProvider>
-            <Navbar />
+            <Navbar cateringMenus={cateringMenus} />
             {children}
           </CartProvider>
         </AdminProvider>

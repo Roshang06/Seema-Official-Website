@@ -112,7 +112,7 @@ function MenuItem({ name, price,  description, img }) {
 }
 
 export default async function Menu() {
-const items = await client.fetch('*[_type == "menuitem"]{section, itemname, price, description, mainImage}');
+const items = await client.fetch('*[_type == "menuitem" && catering != true]{section, itemname, price, description, mainImage}');
 let sections = [];
 items.forEach((item) => {
   if (!sections.includes(item.section)) {

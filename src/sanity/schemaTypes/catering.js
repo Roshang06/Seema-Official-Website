@@ -9,6 +9,14 @@ export default {
       type: "string",
     },
     {
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: {
+        source: "name"
+      },
+    },
+    {
       name: "mainImage",
       title: "Main Image",
       type: "image",
@@ -16,5 +24,16 @@ export default {
         hotspot: true, // Allows the client to choose the crop area
       },
     },
+    {
+      name: "items",
+      title: "Menu Items",
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          to: [{ type: "menuitem" }],
+        }
+      ]
+    }
   ],
 }

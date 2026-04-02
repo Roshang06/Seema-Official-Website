@@ -14,10 +14,16 @@ export default {
       type: 'string',
     },
     {
+      name: 'catering',
+      title: "Catering Menu Only",
+      type: 'boolean',
+      initialValue: false,
+    },
+    {
       name: 'price',
       title: 'Price (USD)',
       type: 'number',
-      validation: (Rule) => Rule.required().positive(),
+      validation: (Rule) => Rule.positive(),
     },
     {
       name: 'description',
