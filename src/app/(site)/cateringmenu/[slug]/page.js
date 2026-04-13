@@ -72,13 +72,13 @@ export default async function CateringMenu({ params }) {
             <p className="mt-3 text-gray-300 text-lg my-6">
               Perfect for any occasion — delicious and beautifully presented.
             </p>
-            {menu.mainImage && (
+            {/*{menu.mainImage && (
               <img
                 src={urlFor(menu.mainImage).url()}
                 alt={menu.name}
                 className="flex-h w-full object-cover rounded-lg mb-6 shadow-lg"
               />
-            )}
+            )}*/}
             
           </header>
 
