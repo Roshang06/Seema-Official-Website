@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import { CartProvider } from "../(site)/context/CartContext";
 import { AdminProvider } from "../(site)/context/AdminContext";
 import { client } from "@/sanity/lib/client";
+import { Analytics } from "@vercel/analytics/next";
 
 /*const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,6 +41,7 @@ export default async function RootLayout({ children }) {
             {children}
           </CartProvider>
         </AdminProvider>
+        <Analytics />
       </body>
     </html>
   );
