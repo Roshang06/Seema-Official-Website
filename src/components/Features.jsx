@@ -24,7 +24,7 @@ const features = [
 
 export default function Features({ content, features_content }) {
   return (
-    <section className="py-16 bg-gradient-to-r from-gray-500 to-white text-center">
+    <section className="py-16 bg-[linear-gradient(to_right,#6b7280,#ffffff)] text-center">
       <h2 className="text-3xl font-bold mb-6">{content.features_title}</h2>
       <p className="max-w-2xl mx-auto text-gray-600 mb-12">
         {content.features_content}

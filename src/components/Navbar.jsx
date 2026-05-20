@@ -38,9 +38,9 @@ export default function Navbar({ cateringMenus = [] }) {
             </Link>
           </li>
           <li className="relative group">
-            <Link href="/cateringmenu" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-blue-600 transition-colors">
+            <button href="/cateringmenu" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="hover:text-blue-600 transition-colors">
               Catering
-            </Link>
+            </button>
             {/* Desktop Dropdown */}
             {cateringMenus.length > 0 && (
               <div className="absolute left-0 hidden group-hover:block bg-white shadow-lg rounded-md py-2 min-w-max z-50 ring-1 ring-gray-200">

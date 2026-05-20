@@ -87,12 +87,12 @@ import { urlFor } from '@/sanity/lib/image';
 
 function MenuItem({ name, price,  description, img }) {
   return (
-    <div className="w-full bg-gradient-to-r from-gray-800 to-slate-800 border border-gray-700 p-8 md:p-8 rounded-2xl shadow-2xl hover:shadow-3xl transition-shadow duration-300">
+    <div className="w-full bg-[linear-gradient(to_right,#1f2937,#1e293b)] border border-gray-700 p-8 md:p-8 rounded-2xl shadow-2xl hover:shadow-3xl transition-shadow duration-300">
       <div className="flex flex-col md:flex-row items-start md:items-center">
         {/* Title: always first */}
         <div className="order-1 md:order-1 w-full md:w-2/3">
           <div className="flex items-baseline justify-between md:block">
-            <h4 className="text-xl md:text-2xl font-semibold bg-gradient-to-r from-amber-300 via-yellow-300 to-amber-200 bg-clip-text text-transparent">{name}</h4>
+            <h4 className="text-xl md:text-2xl font-semibold bg-[linear-gradient(to_right,#fcd34d,#fde047,#fde68a)] bg-clip-text text-transparent">{name}</h4>
             <div className="text-lg md:text-xl font-semibold text-amber-100 md:mt-2">${price}</div>
           </div>
         </div>
@@ -122,17 +122,17 @@ items.forEach((item) => {
 
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-800 text-gray-100 px-6 py-12">
+    <div className="min-h-screen bg-[linear-gradient(to_bottom_right,#030712,#111827,#1f2937)] text-gray-100 px-6 py-12">
       <div className="max-w-6xl mx-auto">
         <header className="text-center mb-10">
-          <h1 style={{ fontFamily: "'Dancing Script', cursive" }} className="text-4xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-amber-300 via-pink-300 to-rose-300">Our Menu</h1>
+          <h1 style={{ fontFamily: "'Dancing Script', cursive" }} className="text-4xl md:text-6xl bg-clip-text text-transparent bg-[linear-gradient(to_right,#fcd34d,#fbcfe8,#ffe4e6)]">Our Menu</h1>
           <p className="mt-3 text-gray-300">A curated selection of favorites — handcrafted with fresh ingredients.</p>
         </header>
 
         <main className="space-y-10">
           {sections.map((section, i) => (
             <section key={i} className="">
-              <h2 style={{ fontFamily: "'Dancing Script', cursive" }} className="text-2xl md:text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-amber-200 via-amber-300 to-yellow-200 mb-4">{section}</h2>
+              <h2 style={{ fontFamily: "'Dancing Script', cursive" }} className="text-2xl md:text-3xl font-semibold bg-clip-text text-transparent bg-[linear-gradient(to_right,#fde68a,#fcd34d,#fef08a)] mb-4">{section}</h2>
 
               <div className="space-y-4">
                 {items.filter(item => item.section === section).map((item) => (

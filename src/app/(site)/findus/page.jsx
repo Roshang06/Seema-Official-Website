@@ -10,7 +10,7 @@ export default async function FindUs() {
   const content = await client.fetch('*[_type == "findus"][0]{findustext}');
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-pink-50 via-white to-blue-50 pb-20 flex items-center">
+    <div className="min-h-screen bg-[linear-gradient(to_bottom,#fdf2f8,#ffffff,#eff6ff)] pb-20 flex items-center">
       <div className="max-w-5xl mx-auto p-6 w-full">
         <h1 className="text-center text-3xl font-bold mb-6">Find Us</h1>
 

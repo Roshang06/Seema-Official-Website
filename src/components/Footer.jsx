@@ -5,7 +5,7 @@ export default function Footer({ content, info }) {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-gradient-to-r from-slate-900 via-rose-900 to-pink-800 text-white py-12">
+    <footer className="bg-[linear-gradient(to_right,#0f172a,#4c0519,#9d174d)] text-white py-12">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
           {/* Left: Logo + description + social */}

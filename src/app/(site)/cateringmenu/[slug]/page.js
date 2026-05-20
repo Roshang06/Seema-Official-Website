@@ -35,7 +35,7 @@ export default async function CateringMenu({ params }) {
 
   if (!menu) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-800 text-gray-100 px-6 py-12">
+      <div className="min-h-screen bg-[linear-gradient(to_bottom_right,#030712,#111827,#1f2937)] text-gray-100 px-6 py-12">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-4xl font-bold text-amber-300">Menu Not Found</h1>
           <p className="mt-4 text-gray-300">
@@ -59,13 +59,13 @@ export default async function CateringMenu({ params }) {
 
   return (
     <>
-      <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-800 text-gray-100 px-6 py-12">
+      <div className="min-h-screen bg-[linear-gradient(to_bottom_right,#030712,#111827,#1f2937)] text-gray-100 px-6 py-12">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <header className="text-center mb-12">
             <h1
               style={{ fontFamily: "'Dancing Script', cursive" }}
-              className="text-5xl md:text-7xl bg-clip-text text-transparent bg-gradient-to-r from-amber-300 to-yellow-300 mb-4"
+              className="text-5xl md:text-7xl bg-clip-text text-transparent bg-[linear-gradient(to_right,#fcd34d,#fde047)] mb-4"
             >
               {menu.name}
             </h1>

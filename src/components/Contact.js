@@ -31,7 +31,7 @@ export default function Contact({content}) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-pink-50 via-white to-blue-50 pb-20 flex items-center">
+    <div className="min-h-screen bg-[linear-gradient(to_bottom,#fdf2f8,#ffffff,#eff6ff)] pb-20 flex items-center">
       <div className="max-w-3xl mx-auto p-8 w-full">
         <h1 className="text-3xl md:text-4xl font-bold mb-3 text-center text-gray-800">
           Contact Us
@@ -74,7 +74,7 @@ export default function Contact({content}) {
               <button
                 type="submit"
                 disabled={loading}
-                className="px-8 py-3 rounded-full text-white font-semibold bg-gradient-to-r from-pink-500 to-blue-600 hover:-translate-y-1 transition"
+                className="px-8 py-3 rounded-full text-white font-semibold bg-[linear-gradient(to_right,#ec4899,#2563eb)] hover:-translate-y-1 transition"
               >
                 {loading ? "Sending..." : "Send Message"}
               </button>
