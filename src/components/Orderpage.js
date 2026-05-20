@@ -361,13 +361,13 @@ export default function OrderPage({menu}) {
 
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-800 text-gray-100">
+    <div className="min-h-screen bg-[linear-gradient(to_bottom_right,#030712,#111827,#1f2937)] text-gray-100">
       {/* Header */}
-      <div className="bg-gradient-to-r from-gray-900 to-gray-800 px-6 py-12 border-b border-gray-700">
+      <div className="bg-[linear-gradient(to_right,#111827,#1f2937)] px-6 py-12 border-b border-gray-700">
         <div className="max-w-7xl mx-auto">
           <h1
             style={{ fontFamily: "'Dancing Script', cursive" }}
-            className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-amber-300 via-pink-300 to-rose-300 mb-2"
+            className="text-5xl font-bold bg-clip-text text-transparent bg-[linear-gradient(to_right,#fcd34d,#f472b6,#f97c9c)] mb-2"
           >
             Place Your Order
           </h1>
@@ -384,7 +384,7 @@ export default function OrderPage({menu}) {
               <div key={section}>
                 <h2
                   style={{ fontFamily: "'Dancing Script', cursive" }}
-                  className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-amber-200 via-amber-300 to-yellow-200 mb-4 pb-3 border-b border-gray-700"
+                  className="text-3xl font-bold bg-clip-text text-transparent bg-[linear-gradient(to_right,#fde047,#fcd34d,#fef08a)] mb-4 pb-3 border-b border-gray-700"
                 >
                   {section}
                 </h2>
@@ -392,7 +392,7 @@ export default function OrderPage({menu}) {
                   {items.map((item) => (
                     <div
                       key={item._id}
-                      className="bg-gradient-to-r from-gray-800 to-slate-800 border border-gray-700 p-4 rounded-lg hover:border-amber-400 hover:shadow-lg hover:shadow-amber-400/20 transition duration-300 flex justify-between items-center group cursor-pointer"
+                      className="bg-[linear-gradient(to_right,#1f2937,#1e293b)] border border-gray-700 p-4 rounded-lg hover:border-amber-400 hover:shadow-lg hover:shadow-amber-400/20 transition duration-300 flex justify-between items-center group cursor-pointer"
                       onClick={() => handleItemClick(item)}
                     >
                       <div>
@@ -404,7 +404,7 @@ export default function OrderPage({menu}) {
                           e.stopPropagation();
                           handleItemClick(item);
                         }}
-                        className="bg-gradient-to-r from-amber-400 to-pink-500 text-white px-6 py-2 rounded-lg hover:shadow-lg hover:shadow-amber-400/50 transition font-semibold"
+                        className="border border-white text-white px-6 py-2 rounded-lg hover:bg-white/10 transition font-semibold"
                       >
                         Add
                       </button>
@@ -416,10 +416,10 @@ export default function OrderPage({menu}) {
           </div>
 
           {/* CART */}
-          <div className="bg-gradient-to-br from-gray-800 to-slate-800 border border-gray-700 p-6 rounded-lg h-fit sticky top-6 shadow-xl">
+          <div className="bg-[linear-gradient(to_bottom_right,#1f2937,#1e293b)] border border-gray-700 p-6 rounded-lg h-fit sticky top-6 shadow-xl">
             <h2
               style={{ fontFamily: "'Dancing Script', cursive" }}
-              className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-pink-300 mb-4"
+              className="text-2xl font-bold text-transparent bg-clip-text bg-[linear-gradient(to_right,#fcd34d,#f472b6)] mb-4"
             >
               Your Cart
             </h2>
@@ -463,7 +463,7 @@ export default function OrderPage({menu}) {
               <button
                 onClick={handleCheckout}
                 disabled={!cart.length}
-                className="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white py-3 rounded-lg hover:shadow-lg hover:shadow-green-500/50 disabled:opacity-50 disabled:cursor-not-allowed font-bold transition mt-3"
+                className="w-full bg-blue-600 text-white py-3 rounded-lg hover:shadow-lg hover:shadow-green-500/50 disabled:opacity-50 disabled:cursor-not-allowed font-bold transition mt-3"
               >
                 Proceed to Checkout
               </button>
@@ -477,10 +477,10 @@ export default function OrderPage({menu}) {
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4 backdrop-blur-sm">
           <div
             ref={modalRef}
-            className="bg-gradient-to-br from-gray-800 to-slate-800 border border-gray-700 p-8 rounded-xl w-full max-w-md shadow-2xl"
+            className="bg-[linear-gradient(to_bottom_right,#1f2937,#1e293b)] border border-gray-700 p-8 rounded-xl w-full max-w-md shadow-2xl"
           >
             <div className="mb-6">
-              <h3 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-pink-300 mb-2">
+              <h3 className="text-3xl font-bold text-transparent bg-clip-text bg-[linear-gradient(to_right,#fcd34d,#f472b6)] mb-2">
                 {selected.itemname}
               </h3>
               <p className="text-amber-400 text-2xl font-bold">${selected.price.toFixed(2)}</p>
@@ -527,7 +527,7 @@ export default function OrderPage({menu}) {
               </button>
               <button
                 onClick={() => handleAdd(selected)}
-                className="flex-1 px-4 py-3 bg-gradient-to-r from-amber-400 to-pink-500 text-white rounded-lg hover:shadow-lg hover:shadow-amber-400/50 transition font-bold"
+                className="flex-1 px-4 py-3 border border-white text-white rounded-lg hover:bg-white/10 transition font-bold"
               >
                 Add to Cart
               </button>
