@@ -48,6 +48,8 @@ export default async function CateringMenu({ params }) {
     itemname: item.itemname,
     price: item.price ?? null,
     description: item.description ?? "",
+    _id: item._id,
+    modifiers: item.modifiers ?? [],
     img: item.mainImage ? urlFor(item.mainImage).url() : null,
   }));
 

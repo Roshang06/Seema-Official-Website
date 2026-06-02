@@ -1,10 +1,12 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import { useCart } from "@/app/(site)/context/CartContext";
 
 export default function Navbar({ cateringMenus = [] }) {
   const [open, setOpen] = useState(false);
   const [cateringOpen, setCateringOpen] = useState(false);
+  const { cart } = useCart();
 
   return (
     <nav className="relative sticky top-0 z-50 bg-white shadow-sm px-8 py-6">
@@ -69,21 +71,35 @@ export default function Navbar({ cateringMenus = [] }) {
           </li>
         </ul>
         
-        <div className="justify-center sm:justify-end">
-          <Link className="px-3 sm:px-6 py-2 whitespace-normal rounded-lg text-white bg-blue-600 transition duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg"
-              href="/order" target="_blank"> {/* Placeholder link */}
-            Order Online
+        {/* Right: Cart Icon + Hamburger */}
+        <div className="flex items-center gap-4">
+          {/* Cart Icon */}
+          <Link href="/cart" className="relative p-2 rounded-lg hover:bg-blue-50 transition-colors">
+            <svg
+              className="w-6 h-6 text-blue-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+              />
+            </svg>
+            {/* Green dot indicator if cart has items */}
+            {cart.length > 0 && (
+              <span className="absolute top-1 right-1 w-2.5 h-2.5 bg-green-500 rounded-full"></span>
+            )}
           </Link>
-        </div>
 
-        {/* Right: hamburger on mobile */}
-        <div className="md:hidden">
-
+          {/* Hamburger on mobile */}
           <button
             onClick={() => setOpen((s) => !s)}
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
-            className="p-2 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-300"
+            className="md:hidden p-2 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-300"
           >
             {/* Hamburger SVG (3 lines) */}
             <svg

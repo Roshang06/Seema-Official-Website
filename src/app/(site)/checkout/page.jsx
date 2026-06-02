@@ -73,7 +73,7 @@ export default function CheckoutPage() {
         <div className="max-w-2xl mx-auto">
           <h1 className="text-3xl font-bold mb-6">Checkout</h1>
           <div className="bg-white p-6 rounded shadow">
-            <p className="text-gray-600">Your cart is empty. <a href="/order" className="text-blue-600">Continue shopping</a></p>
+            <p className="text-gray-600">Your cart is empty. <a href="/menu" className="text-blue-600">Continue shopping</a></p>
           </div>
         </div>
       </div>

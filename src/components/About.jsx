@@ -13,7 +13,7 @@ export default function About({ content }) {
 
         <div className="justify-center sm:justify-end">
           <Link className="px-3 sm:px-6 py-2 rounded-lg text-white bg-blue-600 transition duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg"
-              href="/order" target="_blank"> {/* Placeholder link */}
+              href="/menu">
             Order Online
           </Link>
         </div>

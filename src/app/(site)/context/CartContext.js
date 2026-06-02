@@ -18,11 +18,25 @@ export function CartProvider({ children }) {
   }, [cart]);
 
   function addToCart(item) {
-    setCart((prev) => [...prev, item]);
+    // Each cart item gets a unique cartItemId
+    const cartItem = {
+      ...item,
+      cartItemId: Date.now() + Math.random(), // Unique identifier for this cart entry
+      quantity: item.quantity || 1,
+    };
+    setCart((prev) => [...prev, cartItem]);
   }
 
-  function removeFromCart(index) {
-    setCart((prev) => prev.filter((_, i) => i !== index));
+  function removeFromCart(cartItemId) {
+    setCart((prev) => prev.filter((item) => item.cartItemId !== cartItemId));
+  }
+
+  function updateCartItem(cartItemId, updates) {
+    setCart((prev) =>
+      prev.map((item) =>
+        item.cartItemId === cartItemId ? { ...item, ...updates } : item
+      )
+    );
   }
 
   function clearCart() {
@@ -31,13 +45,13 @@ export function CartProvider({ children }) {
   }
 
   const subtotal = cart.reduce(
-    (sum, item) => sum + item.basePrice * item.quantity,
+    (sum, item) => sum + item.basePrice * (item.quantity || 1),
     0
   );
 
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, removeFromCart, clearCart, subtotal }}
+      value={{ cart, addToCart, removeFromCart, updateCartItem, clearCart, subtotal }}
     >
       {children}
     </CartContext.Provider>

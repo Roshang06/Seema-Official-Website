@@ -69,7 +69,7 @@ import MenuClient from "@/components/MenuClient"; // adjust path as needed
 
 export default async function Menu() {
   const raw = await client.fetch(
-    '*[_type == "menuitem" && catering != true]{section, itemname, price, description, mainImage}'
+    '*[_type == "menuitem" && catering != true]{_id, section, itemname, price, description, mainImage, modifiers[] {name, options}}'
   );
 
   // Resolve image URLs server-side so MenuClient stays purely presentational
