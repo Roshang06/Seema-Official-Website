@@ -56,7 +56,7 @@ function MenuItem({ name, price, description, img, itemId, modifiers, onAddToCar
 
   return (
     <>
-      <div className="w-full bg-[linear-gradient(to_right,#1f2937,#1e293b)] border border-gray-700 px-4 py-3 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 relative">
+      <div className="w-full bg-[linear-gradient(to_right,#1f2937,#1e293b)] border border-gray-700 px-4 py-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 relative">
         <div className="flex items-start gap-4">
           {/* Image */}
           {img && (
@@ -186,7 +186,7 @@ export default function MenuClient({ sections, items, title = "Our Menu" }) {
         onSelect={setActiveSection}
       />
 
-      <div className="md:ml-[52px] px-6 py-12">
+      <div className="md:ml-[52px] px-6 py-12 relative z-0">
         <div className="max-w-3xl mx-auto">
           <header className="text-center mb-10">
             <h1

@@ -73,7 +73,7 @@ export default function MenuSidebar({ sections, activeSection, onSelect }) {
       </motion.aside>
 
       {/* ── Mobile: scrollable top bar ── */}
-      <div className="md:hidden sticky top-[96px] z-0 bg-gray-900/95 backdrop-blur border-b border-gray-700/60">
+      <div className="md:hidden sticky top-[96px] z-40 bg-gray-900/95 backdrop-blur border-b border-gray-700/60">
         <div className="flex overflow-x-auto gap-2 px-4 py-2 scrollbar-hide">
           {sections.map((section) => {
             const isActive = activeSection === section;
