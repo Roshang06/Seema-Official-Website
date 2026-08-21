@@ -40,7 +40,10 @@ export default function CartPage({ menu }) {
 
   function handleCheckout() {
     // Prepare for Clover integration - will be updated later
-    router.push("/checkout");
+    //router.push("/checkout");
+
+    //For now, disable this action until clover integration is complete
+    alert("Online Orders are currently not being taken on this site. Please use DoorDash, or Uber Eats for now.");
   }
 
   // Get menu item details for editing
@@ -58,7 +61,7 @@ export default function CartPage({ menu }) {
               style={{ fontFamily: "'Dancing Script', cursive" }}
               className="text-5xl font-bold bg-clip-text text-transparent bg-[linear-gradient(to_right,#fcd34d,#f472b6,#f97c9c)] mb-2"
             >
-              Your Cart
+              Order for Pickup
             </h1>
             <p className="text-gray-400">Your cart is empty</p>
           </div>
@@ -86,7 +89,7 @@ export default function CartPage({ menu }) {
             style={{ fontFamily: "'Dancing Script', cursive" }}
             className="text-5xl font-bold bg-clip-text text-transparent bg-[linear-gradient(to_right,#fcd34d,#f472b6,#f97c9c)] mb-2"
           >
-            Your Cart
+            Order for Pickup
           </h1>
           <p className="text-gray-400">Review and edit your order</p>
         </div>
@@ -215,7 +218,7 @@ export default function CartPage({ menu }) {
               </button>
               <button
                 onClick={() => {
-                  clearCart();
+                  //clearCart();
                   router.push("/menu");
                 }}
                 className="w-full px-4 py-3 border border-gray-600 text-gray-300 rounded-lg hover:border-amber-400 hover:text-amber-400 transition font-semibold"

@@ -3,7 +3,6 @@ import { useCart } from "../context/CartContext";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-// Generate order ID
 function generateOrderId() {
   return "ORD-" + Date.now().toString().slice(-8) + Math.random().toString(36).substring(2, 6).toUpperCase();
 }
@@ -20,8 +19,9 @@ export default function CheckoutPage() {
   const [orderId] = useState(generateOrderId());
 
   const tax = subtotal * 0.102;
-  const stripeFee = subtotal * 0.029 + 0.3;
-  const total = subtotal + tax + stripeFee;
+  // Dynamic application processing fees usually rely on the payment provider setup.
+  // Clover accounts handle internal card merchant processing fees directly, so we drop the custom Stripe markup.
+  const total = subtotal + tax;
 
   function handleInputChange(e) {
     const { name, value } = e.target;
@@ -34,7 +34,6 @@ export default function CheckoutPage() {
   async function handleCheckout(e) {
     e.preventDefault();
 
-    // Validate required fields
     if (!customerInfo.name.trim() || !customerInfo.email.trim() || !customerInfo.phone.trim()) {
       alert("Please fill in all fields");
       return;
@@ -55,9 +54,9 @@ export default function CheckoutPage() {
 
       const data = await res.json();
       if (data.url) {
-        window.location.href = data.url;
+        window.location.href = data.url; // Redirects straight to checkout.clover.com
       } else {
-        alert("Error creating checkout session");
+        alert(data.error || "Error creating checkout session");
         setLoading(false);
       }
     } catch (error) {
@@ -120,10 +119,6 @@ export default function CheckoutPage() {
               <div className="flex justify-between text-gray-700">
                 <span>Tax (10.2%):</span>
                 <span className="font-medium">${tax.toFixed(2)}</span>
-              </div>
-              <div className="flex justify-between text-gray-700">
-                <span>Stripe Fee:</span>
-                <span className="font-medium">${stripeFee.toFixed(2)}</span>
               </div>
               <div className="flex justify-between text-lg font-bold text-gray-900 pt-2 border-t">
                 <span>Total:</span>
@@ -200,7 +195,7 @@ export default function CheckoutPage() {
                   disabled={loading}
                   className="flex-1 px-4 py-3 bg-green-600 text-white rounded hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed font-semibold"
                 >
-                  {loading ? "Processing..." : "Pay with Stripe"}
+                  {loading ? "Processing..." : "Pay with Clover"}
                 </button>
               </div>
             </form>

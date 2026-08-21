@@ -13,7 +13,7 @@ export default function SuccessContent() {
     const id = searchParams.get("orderId");
     setOrderId(id);
     clearCart();
-  }, []);
+  }, [searchParams, clearCart]);
 
   if (!orderId) {
     return (
@@ -28,7 +28,6 @@ export default function SuccessContent() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-800 flex items-center justify-center p-6">
       <div className="max-w-md w-full">
-        {/* Success Card */}
         <div className="bg-gradient-to-br from-gray-800 to-slate-800 border border-green-500/30 p-8 rounded-xl shadow-2xl text-center">
           {/* Success Icon */}
           <div className="flex justify-center mb-6">
@@ -49,7 +48,6 @@ export default function SuccessContent() {
             </div>
           </div>
 
-          {/* Success Message */}
           <h1
             style={{ fontFamily: "'Dancing Script', cursive" }}
             className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-pink-300 to-rose-300 mb-3"
@@ -74,7 +72,7 @@ export default function SuccessContent() {
           {/* Confirmation Email Notice */}
           <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4 mb-6">
             <p className="text-sm text-gray-300">
-              ✉️ <span className="font-semibold">A confirmation email with your receipt has been sent to the email address you provided.</span>
+              ✉️ <span className="font-semibold">A confirmation email with your receipt will be sent shortly.</span>
             </p>
           </div>
 
